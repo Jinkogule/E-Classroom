@@ -29,7 +29,7 @@ TABLES = {}
 TABLES['Usuarios'] = ('''
       CREATE TABLE `usuarios` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
-      `nome` varchar(20) NOT NULL,
+      `nome` varchar(50) NOT NULL,
       `idade` int(150) NOT NULL,
       `email` varchar(256) NOT NULL,
       `senha` varchar(100) NOT NULL,
@@ -94,11 +94,12 @@ for tabela_nome in TABLES:
 
 
 # inserindo usuarios
-usuario_sql = 'INSERT INTO usuarios (nome, nickname, senha) VALUES (%s, %s, %s)'
+usuario_sql = 'INSERT INTO usuarios (nome, idade, email, senha, tipoUsuario) VALUES (%s, %d, %s, %s, %d)'
 usuarios = [
-      ("Lucas Couto", "Lucao", generate_password_hash("123456").decode('utf-8')),
-      ("Lucas Pimenta", "Pimenta", generate_password_hash("Pimenta@123").decode('utf-8')),
-      ("User Projeto", "user", generate_password_hash("123456").decode('utf-8'))
+      ("Lucas Couto", 24, "lucascouto@gmail.com", generate_password_hash("123456").decode('utf-8'), 1),
+      ("Lucas Pimenta", 24, "lucaspimenta@gmail.com", generate_password_hash("Pimenta@123").decode('utf-8'), 1),
+      ("Daniel Fernandes", 24, "danielfernandes@gmail.com", generate_password_hash("Pimenta@123").decode('utf-8'), 1),
+      ("User Projeto", 34, "userProj@gmail.com",, generate_password_hash("123456").decode('utf-8'), 1)
 ]
 cursor.executemany(usuario_sql, usuarios)
 
@@ -108,14 +109,10 @@ for user in cursor.fetchall():
     print(user[1])
 
 # inserindo produtos
-produtos_sql = 'INSERT INTO produtos (nome, categoria, console) VALUES (%s, %s, %s)'
+produtos_sql = 'INSERT INTO produtos (nome, descricao, valor, usuarioId, avaliacao) VALUES (%s, %s, %d, %d, %d)'
 produtos = [
-      ('Tetris', 'Puzzle', 'Atari'),
-      ('God of War', 'Hack n Slash', 'PS2'),
-      ('Mortal Kombat', 'Luta', 'PS2'),
-      ('Valorant', 'FPS', 'PC'),
-      ('Crash Bandicoot', 'Hack n Slash', 'PS2'),
-      ('Need for Speed', 'Corrida', 'PS2'),
+      ('Curso de Python', 'Aprenda Python do zero!', 50, ?, 0),
+      ('Curso de Frontend', 'Aprenda Frontend do zero!', 50, ?, 0),
 ]
 cursor.executemany(produtos_sql, produtos)
 
