@@ -45,7 +45,8 @@ TABLES['Produtos'] = ('''
       `valor` int(5000) NOT NULL,
       `usuarioId` int(11) NOT NULL,
       `avaliacao` int(11) NOT NULL,
-      PRIMARY KEY (`id`)
+      PRIMARY KEY (`id`),
+      FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
 TABLES['Pedido'] = ('''
@@ -54,7 +55,8 @@ TABLES['Pedido'] = ('''
       `total` int(5000) NOT NULL,
       `status` varchar(50) NOT NULL,
       `usuarioId` int(11) NOT NULL,
-      PRIMARY KEY (`id`)
+      PRIMARY KEY (`id`),
+      FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
 TABLES['Pagamento'] = ('''
@@ -72,7 +74,8 @@ TABLES['Carrinho'] = ('''
       `subTotal` float(5000.0) NOT NULL,
       `status` varchar(50) NOT NULL,
       `usuarioId` int(11) NOT NULL,
-      PRIMARY KEY (`id`)
+      PRIMARY KEY (`id`),
+      FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
 
