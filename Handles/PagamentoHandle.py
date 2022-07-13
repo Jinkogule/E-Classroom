@@ -12,7 +12,7 @@ class PagamentoHandle(db.Model):
         if(true):
             nextHandle(chavePedido)
         else:
-            return print("O pedido não está disponivel")
+            return print("O pedido nao esta disponivel")
 
         return 
 
