@@ -1,4 +1,7 @@
-class PedidoHandle(db.Model):
+from app import db
+
+class PedidoHandle(chavePedido):
+    
     #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     #nome = db.Column(db.String(50), nullable=False)
     #categoria = db.Column(db.String(40), nullable=False)
