@@ -1,4 +1,5 @@
 from models import *
+from app import *
 
 #Daniel Fernandes Pereira - 217083085
 class PedidoManager():
