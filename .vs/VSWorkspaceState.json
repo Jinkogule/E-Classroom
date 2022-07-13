@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\__pycache__"
+    "\\Documentos",
+    "\\Documentos\\Diagramas",
+    "\\Documentos\\Padrão de projeto",
+    "\\Documentos\\Padrão de projeto\\Padrão de projeto escolhido"
   ],
-  "SelectedNode": "\\views_produto.py",
+  "SelectedNode": "\\Documentos\\Padrão de projeto\\Padrão de projeto escolhido\\Abstract Factory.asta",
   "PreviewInSolutionExplorer": false
 }
