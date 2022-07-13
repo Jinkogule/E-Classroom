@@ -1,10 +1,24 @@
+from PedidoManager import *
 
-
+#Daniel Fernandes Pereira - 217083085
 class PagamentoHandle(db.Model):
-    #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    #nome = db.Column(db.String(50), nullable=False)
-    #categoria = db.Column(db.String(40), nullable=False)
-    #valor = db.Column(db.String(20), nullable=False)
+   
+    
+    def VerificarPagamento(chavePedido):
+        
+        #Chamada para o a instituicao de pagamento
+        print("Verificando Pagamento...")
 
-    def __repr__(self):
-        return '<Name %r>' % self.name
+        if(true):
+            nextHandle(chavePedido)
+        else:
+            return print("O pedido não está disponivel")
+
+        return 
+
+
+    def nextHandle(chavePedido):
+
+        PedidoManager.ConcluirPedido(chavePedido)
+        
+        return

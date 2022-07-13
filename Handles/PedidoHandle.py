@@ -1,11 +1,24 @@
-from app import db
+from PagamentoHandle import *
 
-class PedidoHandle(chavePedido):
-    
-    #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    #nome = db.Column(db.String(50), nullable=False)
-    #categoria = db.Column(db.String(40), nullable=False)
-    #valor = db.Column(db.String(20), nullable=False)
+#Daniel Fernandes Pereira - 217083085
+class PedidoHandle(db.Model):
+   
 
-    def __repr__(self):
-        return '<Name %r>' % self.name
+    def VerificarDisponibilidade(chavePedido):
+        
+        #Chamada para a model de produtos
+        print("Verificando disponibilidade do Pedido")
+
+        if(true):
+            nextPagamentoHandle(chavePedido)
+        else:
+            return print("O pedido não está disponivel")
+
+        return 
+
+
+    def nextPagamentoHandle(chavePedido):
+
+        PagamentoHandle.VerificarPagamento(chavePedido)
+        
+        return
