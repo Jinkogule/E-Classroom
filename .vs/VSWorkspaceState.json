@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Documentos",
-    "\\Documentos\\Diagramas",
-    "\\Documentos\\Padrão de projeto",
-    "\\Documentos\\Padrão de projeto\\Padrão de projeto escolhido"
+    "\\Handles",
+    "\\templates"
   ],
-  "SelectedNode": "\\Documentos\\Padrão de projeto\\Padrão de projeto escolhido\\Abstract Factory.asta",
+  "SelectedNode": "\\Handles\\PedidoHandle.py",
   "PreviewInSolutionExplorer": false
 }
