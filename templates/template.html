@@ -20,9 +20,21 @@
                 {% endif %}
             {% endwith %}
 
-          <div class="page-header">
-              <h1>{{ titulo }}</h1>
-          </div>
+            <!--Menu-->
+            <nav class="navbar navbar1 navbar-expand-md fixed-top">
+                <div class="container-fluid container-menu" style="position: relative;">
+                    <!-- Brand -->
+                    <a class="navbar-brand navbar-brand-dashboard logo" href="/dashboard">
+                        <img class="img-fluid" src="{{ url_for('imagem', nome_arquivo='open-book.png') }}" style="height: 40px; width: auto;">
+                        
+                    <!-- Brand -->
+                    </a>  
+                    
+                    <h4 class="bem-vindo centraliza">E-Classroom!</h4>
+                </div>
+
+            </nav>
+            <!--Menu-->
 
             {% block conteudo %}{% endblock %}
 
