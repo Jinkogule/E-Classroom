@@ -8,7 +8,10 @@ import time
 @app.route('/')
 def index():
     lista = Produtos.query.order_by(Produtos.id)
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('login', proxima=url_for('/')))
     return render_template('lista.html', titulo='Produtos', produtos=lista)
+    
 
 @app.route('/novo')
 def novo():

@@ -15,7 +15,7 @@ def autenticar():
     form = FormularioUsuario(request.form)
     usuario = Usuarios.query.filter_by(nickname=form.nickname.data).first()
     senha = check_password_hash(usuario.senha, form.senha.data)
-    if usuario and senha:
+    if usuario and senha and senha != None:
         session['usuario_logado'] = usuario.nickname
         flash(usuario.nickname + ' logado com sucesso!')
         proxima_pagina = request.form['proxima']
@@ -28,4 +28,4 @@ def autenticar():
 def logout():
     session['usuario_logado'] = None
     flash('Logout efetuado com sucesso!')
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))

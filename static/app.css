@@ -5,7 +5,9 @@ body{
     font-size: 1.0rem;
     text-align: justify;
     background-color: rgb(220, 247, 255);
-    background-image: url("./uploads/background.jpg")"
+    background-image: url('/static/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 hr { display: block; height: 1px;

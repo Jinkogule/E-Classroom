@@ -1,11 +1,10 @@
 {% extends "template.html" %}
 {% block conteudo %}
+        <h1> Meus cursos</h1>
+        <a class="btn btn-primary" href="{{ url_for('novo') }}">Novo curso</a>
+        <br><br>
 
-        <a class="btn btn-primary" href="{{ url_for('login') }}">Login</a>
-        <a class="btn btn-danger" href="{{ url_for('logout') }}">Logout</a>
-        <a class="btn btn-primary" href="{{ url_for('novo') }}">Novo Produto</a>
-
-        <table class="table table-striped table-responsive table-bordered">
+        <table class="table table-striped table-responsive table-bordered" style="background-color:rgb(243, 220, 169); border-radius: 15px;">
             <thead class="thead-default">
                 <tr>
                     <th>Nome</th>

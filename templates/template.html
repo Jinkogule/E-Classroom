@@ -14,7 +14,7 @@
                 {% if messages %}
                     <ul id="messages" class="list-unstyled">
                     {% for message in messages %}
-                        <li class="alert alert-success">{{ message }}</li>
+                        <li class="alert alert-success" style="text-align: center; margin-top: 20px;">{{ message }}</li>
                     {% endfor %}
                     </ul>
                 {% endif %}
@@ -24,16 +24,27 @@
             <nav class="navbar navbar1 navbar-expand-md fixed-top">
                 <div class="container-fluid container-menu" style="position: relative;">
                     <!-- Brand -->
-                    <a class="navbar-brand navbar-brand-dashboard logo" href="/dashboard">
-                        <img class="img-fluid" src="{{ url_for('imagem', nome_arquivo='open-book.png') }}" style="height: 40px; width: auto;">
+                    <a class="navbar-brand navbar-brand-dashboard logo" href="">
+                        <img class="img-fluid" src="{{ url_for('imagem', nome_arquivo='open-book.png') }}" style="height: 35px; width: auto; margin: 0; padding: 0;">
                         
                     <!-- Brand -->
                     </a>  
                     
-                    <h4 class="bem-vindo centraliza">E-Classroom!</h4>
-                </div>
+                    {% if session['usuario_logado'] != None %}
+                    <h4 class="bem-vindo centraliza">E-Classroom - Área do Professor</h4>
+                    {% endif %}
 
+                    {% if session['usuario_logado'] == None %}
+                    <h4 class="bem-vindo centraliza">E-Classroom</h4>
+                    {% endif %}
+
+                    {% if session['usuario_logado'] != None %}
+                    <a class="btn btn-danger" href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
+   
+                </div>
             </nav>
+            <br><br><br>
             <!--Menu-->
 
             {% block conteudo %}{% endblock %}
